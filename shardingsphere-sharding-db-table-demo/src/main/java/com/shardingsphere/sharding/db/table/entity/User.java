@@ -1,4 +1,4 @@
-package com.shardingsphere.readwrite.entity;
+package com.shardingsphere.sharding.db.table.entity;
 
 public class User {
     private Long id;
@@ -28,6 +28,24 @@ public class User {
     }
     
     public void setShardingKey(Integer shardingKey) {
+        this.shardingKey = shardingKey;
+    }
+    
+    public User() {}
+    
+    public User(Long id, String name, Integer shardingKey) {
+        this.id = id;
+        this.name = name;
+        this.shardingKey = shardingKey;
+    }
+    
+    public User(String name, Integer shardingKey) {
+        this.name = name;
+        this.shardingKey = shardingKey;
+    }
+    
+    public User(Long id, Integer shardingKey) {
+        this.id = id;
         this.shardingKey = shardingKey;
     }
 }

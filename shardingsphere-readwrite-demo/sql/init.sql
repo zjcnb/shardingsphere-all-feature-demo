@@ -12,7 +12,7 @@ CREATE TABLE `t_user`
     PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
-INSERT INTO t_user(`name`, `sharding_key`) VALUE ('ShardingSphere-write-node', 1);
+INSERT INTO t_user(`name`, `sharding_key`) VALUE ('master', 1);
 
 /** ------------------------------------------------------------------------------------------------- **/
 

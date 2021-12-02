@@ -11,4 +11,8 @@
         select id, name, sharding_key from t_user order by id desc limit 1
     </select>
 
+    <insert id="insert" parameterType="com.shardingsphere.readwrite.entity.User" keyProperty="id" keyColumn="id" useGeneratedKeys="true">
+        insert into t_user(name, sharding_key) values (#{name}, #{shardingKey})
+    </insert>
+
 </mapper>
