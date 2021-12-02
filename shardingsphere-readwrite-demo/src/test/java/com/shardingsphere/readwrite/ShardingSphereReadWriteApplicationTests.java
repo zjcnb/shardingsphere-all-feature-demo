@@ -16,10 +16,10 @@ public class ShardingSphereReadWriteApplicationTests {
     @Test
     public void ShardingSphereReadWriteTest() {
         User user = userMapper.select();
-        if ("ShardingSphere-read-node".equals(user.getName())) {
-            System.out.println("成功");
-        } else {
-            System.out.println("失败");
-        }
+        System.out.println();
+        System.out.println();
+        System.out.println("name is :" + user.getName() + " , " + "sharding_key is :" + user.getShardingKey());
+        System.out.println();
+        System.out.println();
     }
 }

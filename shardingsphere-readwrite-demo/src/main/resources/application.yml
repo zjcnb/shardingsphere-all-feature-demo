@@ -9,29 +9,49 @@ spring:
   shardingsphere:
     props:
       sql-show: true
-      sql-comment-parse-enabled: true
     datasource:
-      ds0:
+      master:
         username: root
         password: 123456
         jdbc-url: jdbc:mysql://127.0.0.1:3306/master
         type: com.zaxxer.hikari.HikariDataSource
         driver-class-name: com.mysql.cj.jdbc.Driver
-      ds1:
+      slave1:
         username: root
         password: 123456
-        jdbc-url: jdbc:mysql://127.0.0.1:3306/slave
+        jdbc-url: jdbc:mysql://127.0.0.1:3306/slave1
         type: com.zaxxer.hikari.HikariDataSource
         driver-class-name: com.mysql.cj.jdbc.Driver
-      names: ds0, ds1
+      slave2:
+        username: root
+        password: 123456
+        jdbc-url: jdbc:mysql://127.0.0.1:3306/slave2
+        type: com.zaxxer.hikari.HikariDataSource
+        driver-class-name: com.mysql.cj.jdbc.Driver
+      names: master, slave1, slave2
+
+    # 轮训算法配置
+#    rules:
+#      readwrite-splitting:
+#        data-sources:
+#          master-slave:
+#            write-data-source-name: master
+#            read-data-source-names: slave1, slave2
+#            load-balancer-name: roundRobin
+#        load-balancers:
+#          roundRobin:
+#            type: ROUND_ROBIN
+
+    # 随机算法配置
     rules:
       readwrite-splitting:
         data-sources:
           master-slave:
-            write-data-source-name: ds0
-            read-data-source-names: ds1 # 可配置多个 逗号分割 比如: ds1,ds2,ds3
-            load-balancer-name: load
+            write-data-source-name: master
+            read-data-source-names: slave1, slave2
+            load-balancer-name: random
         load-balancers:
-          load: # 轮询名
-            type: ROUND_ROBIN
+          random:
+            type: RANDOM
+
 
