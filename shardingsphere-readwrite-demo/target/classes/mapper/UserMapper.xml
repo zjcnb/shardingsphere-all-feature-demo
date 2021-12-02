@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.shardingsphere.readwrite.mapper.UserMapper">
+    <resultMap id="userMap" type="com.shardingsphere.readwrite.entity.User">
+        <id column="id" jdbcType="BIGINT" property="id"/>
+        <result column="name" jdbcType="VARCHAR" property="name"/>
+        <result column="sharding_key" jdbcType="INTEGER" property="shardingKey"/>
+    </resultMap>
+
+    <select id = "select" resultMap="userMap">
+        select id, name, sharding_key from t_user order by id desc limit 1
+    </select>
+
+</mapper>
