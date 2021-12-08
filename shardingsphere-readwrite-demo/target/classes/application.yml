@@ -3,12 +3,14 @@ mybatis:
   mapper-locations: classpath*:mapper/**/*Mapper.xml
   type-aliases-package: com.shardingsphere
 
+
 server:
   port: 8899
 spring:
   shardingsphere:
     props:
       sql-show: true
+      sql-comment-parse-enabled: true
     datasource:
       master:
         username: root
@@ -44,6 +46,30 @@ spring:
 
     # 随机算法配置
     rules:
+      sharding:
+        sharding-algorithms:
+          # 分表算法
+          table-inline:
+            type: INLINE
+            props:
+              algorithm-expression: t_user$->{sharding_key % 2}
+        tables:
+          t_user:
+            actual-data-nodes: master.t_user$->{0..1}
+            key-generate-strategy:
+              column: id
+              key-generator-name: snowflake
+            # 分表策略
+            table-strategy:
+              standard:
+                sharding-column: sharding_key
+                sharding-algorithm-name: table-inline
+        key-generators:
+          snowflake:
+            type: SNOWFLAKE
+            props:
+              worker-id: 123
+
       readwrite-splitting:
         data-sources:
           master-slave:
@@ -53,5 +79,17 @@ spring:
         load-balancers:
           random:
             type: RANDOM
+#    mode:
+#      type: Cluster
+#      repository:
+#        type: Zookeeper
+#        props:
+#          namespace: governance_ds
+#          server-lists: localhost:2181
+#          retryIntervalMilliseconds: 500
+#          timeToLiveSeconds: 60
+#          maxRetries: 3
+#          operationTimeoutMilliseconds: 500
+#      overwrite: false
 
 

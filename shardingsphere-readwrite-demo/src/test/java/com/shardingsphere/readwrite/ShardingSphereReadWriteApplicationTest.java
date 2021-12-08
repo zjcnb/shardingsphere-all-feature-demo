@@ -28,8 +28,8 @@ public class ShardingSphereReadWriteApplicationTest {
     @Test
     public void writeTest() {
         User user = new User();
-        user.setName("master-1");
-        user.setShardingKey(2);
+        user.setName("master-222222");
+        user.setShardingKey(6);
         userMapper.insert(user);
         System.out.println();
         System.out.println();
