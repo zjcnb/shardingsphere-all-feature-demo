@@ -7,6 +7,6 @@ import org.springframework.stereotype.Repository;
 @Mapper
 @Repository
 public interface UserMapper {
-	User select();
+	User select(User user);
 	long insert(User user);
 }

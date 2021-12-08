@@ -10,7 +10,7 @@ spring:
   shardingsphere:
     props:
       sql-show: true
-      sql-comment-parse-enabled: true
+#      sql-comment-parse-enabled: true
     datasource:
       master:
         username: root
@@ -72,7 +72,7 @@ spring:
 
       readwrite-splitting:
         data-sources:
-          master-slave:
+          master:
             write-data-source-name: master
             read-data-source-names: slave1, slave2
             load-balancer-name: random

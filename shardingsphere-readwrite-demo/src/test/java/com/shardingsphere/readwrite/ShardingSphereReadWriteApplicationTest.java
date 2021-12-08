@@ -16,7 +16,10 @@ public class ShardingSphereReadWriteApplicationTest {
     /** Actual SQL: slave2 ::: select id, name, sharding_key from t_user order by id desc limit 1 **/
     @Test
     public void readTest() {
-        User user = userMapper.select();
+        User selectUser = new User();
+        selectUser.setId(675402755124736000L);
+        selectUser.setShardingKey(1);
+        User user = userMapper.select(selectUser);
         System.out.println();
         System.out.println();
         System.out.println("name is :" + user.getName() + " , " + "sharding_key is :" + user.getShardingKey());
@@ -28,8 +31,8 @@ public class ShardingSphereReadWriteApplicationTest {
     @Test
     public void writeTest() {
         User user = new User();
-        user.setName("master-222222");
-        user.setShardingKey(6);
+        user.setName("zhaojinchao");
+        user.setShardingKey(1);
         userMapper.insert(user);
         System.out.println();
         System.out.println();

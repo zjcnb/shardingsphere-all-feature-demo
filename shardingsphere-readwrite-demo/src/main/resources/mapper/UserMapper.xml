@@ -7,9 +7,8 @@
         <result column="sharding_key" jdbcType="INTEGER" property="shardingKey"/>
     </resultMap>
 
-    <select id = "select" resultMap="userMap">
-        /* ShardingSphere hint: DatasourceName=slave1 */
-        select id, name, sharding_key from t_user order by id desc limit 1
+    <select id = "select" parameterType="com.shardingsphere.readwrite.entity.User" resultMap="userMap">
+        select id, name, sharding_key from t_user where id = #{id} and sharding_key = #{shardingKey} order by id desc limit 1
     </select>
 
     <insert id="insert" parameterType="com.shardingsphere.readwrite.entity.User" keyProperty="id" keyColumn="id" useGeneratedKeys="true">
