@@ -8,5 +8,4 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface UserMapper {
 	User select(User user);
-	long insert(User user);
 }

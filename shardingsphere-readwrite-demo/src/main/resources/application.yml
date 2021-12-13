@@ -80,9 +80,9 @@ spring:
           random:
             type: RANDOM
 #    mode:
-#      type: Cluster
+#      type: cluster
 #      repository:
-#        type: Zookeeper
+#        type: zookeeper
 #        props:
 #          namespace: governance_ds
 #          server-lists: localhost:2181
