@@ -8,7 +8,7 @@
     </resultMap>
 
     <select id = "select" parameterType="com.shardingsphere.discovery.entity.User" resultMap="userMap">
-        select id, name, sharding_key from t_user where id = #{id} and sharding_key = #{shardingKey} order by id desc limit 1
+        select id, name, sharding_key from t_user order by id desc limit 1
     </select>
 
 </mapper>
