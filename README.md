@@ -3,7 +3,7 @@
 
 
 ```
-shardingsphere-discovery-demo
+shardingsphere-readwrite-demo
 
 ---
 
