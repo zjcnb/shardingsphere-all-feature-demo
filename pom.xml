@@ -11,7 +11,7 @@
     <modules>
         <module>shardingsphere-readwrite-demo</module>
         <module>shardingsphere-sharding-db-table-demo</module>
-        <module>shardingsphere.discovery-demo</module>
+        <module>shardingsphere-discovery-demo</module>
     </modules>
 
     <dependencies>
