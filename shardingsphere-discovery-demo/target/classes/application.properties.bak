@@ -3,21 +3,21 @@ mybatis.type-aliases-package=com.shardingsphere
 
 server.port=8899
 spring.shardingsphere.props.sql-show=true
-spring.shardingsphere.datasource.ds-0.jdbc-url = jdbc:mysql://127.0.0.1:13306/demo_primary_ds?serverTimezone=UTC&useSSL=false
+spring.shardingsphere.datasource.ds-0.jdbc-url = jdbc:mysql://117.48.121.18:13306/demo_primary_ds?serverTimezone=UTC&useSSL=false
 spring.shardingsphere.datasource.ds-0.username=root
-spring.shardingsphere.datasource.ds-0.password=123456
+spring.shardingsphere.datasource.ds-0.password=sphereEx@2021
 spring.shardingsphere.datasource.ds-0.type=com.zaxxer.hikari.HikariDataSource
 spring.shardingsphere.datasource.ds-0.driver-class-name=com.mysql.cj.jdbc.Driver
 
-spring.shardingsphere.datasource.ds-1.jdbc-url = jdbc:mysql://127.0.0.1:13307/demo_primary_ds?serverTimezone=UTC&useSSL=false
+spring.shardingsphere.datasource.ds-1.jdbc-url = jdbc:mysql://117.48.121.18:13307/demo_primary_ds?serverTimezone=UTC&useSSL=false
 spring.shardingsphere.datasource.ds-1.username=root
-spring.shardingsphere.datasource.ds-1.password=123456
+spring.shardingsphere.datasource.ds-1.password=sphereEx@2021
 spring.shardingsphere.datasource.ds-1.type=com.zaxxer.hikari.HikariDataSource
 spring.shardingsphere.datasource.ds-1.driver-class-name=com.mysql.cj.jdbc.Driver
 
-spring.shardingsphere.datasource.ds-2.jdbc-url = jdbc:mysql://127.0.0.1:13308/demo_primary_ds?serverTimezone=UTC&useSSL=false
+spring.shardingsphere.datasource.ds-2.jdbc-url = jdbc:mysql://117.48.121.18:13308/demo_primary_ds?serverTimezone=UTC&useSSL=false
 spring.shardingsphere.datasource.ds-2.username=root
-spring.shardingsphere.datasource.ds-2.password=123456
+spring.shardingsphere.datasource.ds-2.password=sphereEx@2021
 spring.shardingsphere.datasource.ds-2.type=com.zaxxer.hikari.HikariDataSource
 spring.shardingsphere.datasource.ds-2.driver-class-name=com.mysql.cj.jdbc.Driver
 

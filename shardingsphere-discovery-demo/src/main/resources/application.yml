@@ -14,7 +14,7 @@ spring:
       ds-0:
         jdbc-url: jdbc:mysql://127.0.0.1:13306/demo_primary_ds?serverTimezone=UTC&useSSL=false
         username: root
-        password: sphereEx@2021
+        password: 123456
         type: com.zaxxer.hikari.HikariDataSource
         driver-class-name: com.mysql.cj.jdbc.Driver
         connectionTimeoutMilliseconds: 3000
@@ -25,7 +25,7 @@ spring:
       ds-1:
         jdbc-url: jdbc:mysql://127.0.0.1:13307/demo_primary_ds?serverTimezone=UTC&useSSL=false
         username: root
-        password: sphereEx@2021
+        password: 123456
         type: com.zaxxer.hikari.HikariDataSource
         driver-class-name: com.mysql.cj.jdbc.Driver
         connectionTimeoutMilliseconds: 3000
@@ -36,7 +36,7 @@ spring:
       ds-2:
         jdbc-url: jdbc:mysql://127.0.0.1:13308/demo_primary_ds?serverTimezone=UTC&useSSL=false
         username: root
-        password: sphereEx@2021
+        password: 123456
         type: com.zaxxer.hikari.HikariDataSource
         driver-class-name: com.mysql.cj.jdbc.Driver
         connectionTimeoutMilliseconds: 3000

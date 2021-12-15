@@ -1,0 +1,3 @@
+com/shardingsphere/sharding/db/table/ShardingSphereShardingDbTableApplication.class
+com/shardingsphere/sharding/db/table/entity/User.class
+com/shardingsphere/sharding/db/table/mapper/UserMapper.class

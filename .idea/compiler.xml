@@ -8,12 +8,10 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="shardingsphere-sharding-db-table-demo" />
+        <module name="shardingsphere-discovery-demo" />
         <module name="shardingsphere-readwrite-demo" />
         <module name="shardingsphere.discovery.demo" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="shardingsphere-discovery-demo" target="8" />
-    </bytecodeTargetLevel>
   </component>
 </project>

@@ -12,7 +12,7 @@ spring:
       sql-show: true
     datasource:
       ds-0:
-        jdbc-url: jdbc:mysql://127.0.0.1:13306/demo_primary_ds?serverTimezone=UTC&useSSL=false
+        jdbc-url: jdbc:mysql://117.48.121.18:13306/demo_primary_ds?serverTimezone=UTC&useSSL=false
         username: root
         password: sphereEx@2021
         type: com.zaxxer.hikari.HikariDataSource
@@ -23,7 +23,7 @@ spring:
         maxPoolSize: 50
         minPoolSize: 1
       ds-1:
-        jdbc-url: jdbc:mysql://127.0.0.1:13307/demo_primary_ds?serverTimezone=UTC&useSSL=false
+        jdbc-url: jdbc:mysql://117.48.121.18:13307/demo_primary_ds?serverTimezone=UTC&useSSL=false
         username: root
         password: sphereEx@2021
         type: com.zaxxer.hikari.HikariDataSource
@@ -34,7 +34,7 @@ spring:
         maxPoolSize: 50
         minPoolSize: 1
       ds-2:
-        jdbc-url: jdbc:mysql://127.0.0.1:13308/demo_primary_ds?serverTimezone=UTC&useSSL=false
+        jdbc-url: jdbc:mysql://117.48.121.18:13308/demo_primary_ds?serverTimezone=UTC&useSSL=false
         username: root
         password: sphereEx@2021
         type: com.zaxxer.hikari.HikariDataSource
