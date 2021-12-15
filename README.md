@@ -18,3 +18,11 @@ shardingsphere-sharding-db-table-demo
 ShardingSphere 的分库分表功能. 根据 sharding_key 字段进行分库, 
 根据 id 字段进行分表, id 采用的是 ShardingSphere 提供的雪花算法生成. 
 ```
+
+```
+shardingsphere-discovery-demo
+
+---
+
+ShardingSphere 高可用配置, 默认使用 MySQL MGR 组件. 包含了 yaml 及 application.properties 配置
+```
