@@ -1,0 +1,3 @@
+com/shardingsphere/discovery/ShardingSphereDiscoveryApplication.class
+com/shardingsphere/discovery/mapper/UserMapper.class
+com/shardingsphere/discovery/entity/User.class
