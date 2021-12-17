@@ -61,12 +61,12 @@ spring:
           mgr:
             type: MGR
             props:
-              groupName: b13df29e-90b6-11e8-8d1b-525400fc3996
+              group-name: b13df29e-90b6-11e8-8d1b-525400fc3996
 
         discovery-heartbeats:
           mgr-heartbeat:
             props:
-              keepAliveCron: '0/5 * * * * ?'
+              keep-alive-cron: '0/5 * * * * ?'
     mode:
       type: Cluster
       repository:
