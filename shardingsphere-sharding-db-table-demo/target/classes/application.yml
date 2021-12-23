@@ -1,60 +1,31 @@
-## mybatis的配置
-mybatis:
-  mapper-locations: classpath*:mapper/**/*Mapper.xml
-  type-aliases-package: com.shardingsphere.sharding.db.table
-
-server:
-  port: 8899
 spring:
   shardingsphere:
-    props:
-      sql-show: true
-    datasource:
+    enabled: true
+    dataSources:
       ds0:
+        dataSourceClassName: com.alibaba.druid.pool.DruidDataSource
+        driverClassName: com.mysql.jdbc.Driver
+        jdbcUrl: jdbc:mysql://127.0.0.1:9000/xxxx?useUnicode=true&characterEncoding=utf8&useSSL=false&rewriteBatchedStatements=true
         username: root
-        password: 123456
-        jdbc-url: jdbc:mysql://127.0.0.1:3306/test0
-        type: com.zaxxer.hikari.HikariDataSource
-        driver-class-name: com.mysql.cj.jdbc.Driver
-      ds1:
-        username: root
-        password: 123456
-        jdbc-url: jdbc:mysql://127.0.0.1:3306/test1
-        type: com.zaxxer.hikari.HikariDataSource
-        driver-class-name: com.mysql.cj.jdbc.Driver
-      names: ds0, ds1
+        password: xxxxxxx
     rules:
-      sharding:
-        sharding-algorithms:
-          # 分表算法
-          table-inline:
-            type: INLINE
-            props:
-              algorithm-expression: t_user$->{id % 2}
-          # 分库算法
-          database-inline:
-            type: INLINE
-            props:
-              algorithm-expression: ds$->{sharding_key % 2}
-
-        tables:
-          t_user:
-            actual-data-nodes: ds$->{0..1}.t_user$->{0..1}
-            key-generate-strategy:
-              column: id
-              key-generator-name: snowflake
-            # 分库策略
-            database-strategy:
-              standard:
-                sharding-column: sharding_key
-                sharding-algorithm-name: database-inline
-            # 分表策略
-            table-strategy:
-              standard:
-                sharding-column: id
-                sharding-algorithm-name: table-inline
-        key-generators:
-          snowflake:
-            type: SNOWFLAKE
-            props:
-              worker-id: 123
+      tables:
+        test_user:
+          actualDataNodes: db0.test_user$->{0..1}
+          tableStrategy:
+            standard:
+              shardingColumn: id
+              shardingAlgorithmName: test-user-inline
+          keyGenerateStrategy:
+            column: id
+            keyGeneratorName: snowflake
+      shardingAlgorithms:
+        test-user-inline:
+          type: INLINE
+          props:
+            algorithm-expression: test_user$->{id % 2}
+      keyGenerators:
+        snowflake:
+          type: SNOWFLAKE
+          props:
+            worker-id: 123

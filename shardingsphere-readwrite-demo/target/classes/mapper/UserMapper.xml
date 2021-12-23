@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.shardingsphere.discovery.mapper.UserMapper">
-    <resultMap id="userMap" type="com.shardingsphere.discovery.entity.User">
+<mapper namespace="com.shardingsphere.readwrite.mapper.UserMapper">
+    <resultMap id="userMap" type="com.shardingsphere.readwrite.entity.User">
         <id column="id" jdbcType="BIGINT" property="id"/>
         <result column="name" jdbcType="VARCHAR" property="name"/>
         <result column="sharding_key" jdbcType="INTEGER" property="shardingKey"/>
     </resultMap>
 
-    <select id = "select" parameterType="com.shardingsphere.discovery.entity.User" resultMap="userMap">
-        select id, name, sharding_key from t_user where id = #{id} and sharding_key = #{shardingKey} order by id desc limit 1
+    <select id = "select" parameterType="com.shardingsphere.readwrite.entity.User" resultMap="userMap">
+        select id, name, sharding_key from t_user where sharding_key = #{shardingKey} order by id desc limit 1
     </select>
+
+    <insert id="insert" parameterType="com.shardingsphere.readwrite.entity.User" keyProperty="id" keyColumn="id" useGeneratedKeys="true">
+        insert into t_user(name, sharding_key) values (#{name}, #{shardingKey})
+    </insert>
 
 </mapper>
