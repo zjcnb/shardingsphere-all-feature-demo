@@ -1,6 +1,5 @@
 package com.shardingsphere.sharding.db.table;
 
-import com.shardingsphere.sharding.db.table.entity.User;
 import com.shardingsphere.sharding.db.table.mapper.UserMapper;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
