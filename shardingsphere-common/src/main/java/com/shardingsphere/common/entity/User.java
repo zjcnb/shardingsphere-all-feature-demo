@@ -1,4 +1,4 @@
-package com.shardingsphere.sharding.db.table.entity;
+package com.shardingsphere.common.entity;
 
 public class User {
     private Long id;
