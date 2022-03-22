@@ -1,5 +1,6 @@
 package com.shardingsphere.readwrite;
 
+import com.shardingsphere.common.entity.User;
 import com.shardingsphere.readwrite.mapper.UserMapper;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
